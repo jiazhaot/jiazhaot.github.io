@@ -96,22 +96,22 @@ body,button,input,section{
     color:#3D7666
 }
 
-.headeright{
+.headerright{
     float: right;
     margin-top: 30px;
 }
 
-.headeright a{
+.headerright a{
     display: block;
     float: left;
     margin-right: 46px;
 }
 
-.headeright a:last-child{
+.headerright a:last-child{
     margin-right: 0px;
 }
 
-.headeright a img{
+.headerright a img{
     display: block;
     max-width: 100%;
 }

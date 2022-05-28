@@ -302,3 +302,29 @@ body,button,input,section{
     margin: 0 auto;
 }
 
+.container{
+    width: 100%;
+}
+
+.first{
+    width: 100%;
+    padding: 70px 10%;
+    box-sizing: border-box;
+}
+
+.firsttext{
+    float: right;
+}
+
+.firsttext a{
+    display: block;
+    font-size: 50px;
+    color: #3D7666;
+    text-decoration: underline;
+    text-align: right;
+    cursor: default;
+    font-style: oblique;
+    line-height: 70px;
+    font-weight: 500;
+    text-shadow: 2px 2px #fff;
+}

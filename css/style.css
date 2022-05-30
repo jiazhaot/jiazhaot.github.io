@@ -452,3 +452,85 @@ body,button,input,section {
     width: 100%;
 }
 
+.boxtexted h6{
+    font-size: 24px;
+    color: #264840;
+    font-weight: 500;
+    margin-bottom: 24px;
+    font-style: oblique;
+}
+
+.boxtexted .texted{
+    font-size: 24px;
+    color: #264840;
+    font-weight: 500;
+    margin-bottom: 24px;
+    font-style: oblique;
+}
+
+.boxtexted .lastext{
+    font-size: 24px;
+    color: #264840;
+    font-weight: 500;
+    font-style: oblique;
+}
+
+.boxlast{
+    width: 416px;
+    height: 58px;
+    background: #48907F;
+    border-radius: 4px;
+    border: 1px solid #707070;
+    box-sizing: border-box;
+    margin-top: 24px;
+}
+
+.boxlast button{
+    float: left;
+    width: 56px;
+    height: 56px;
+    border: 0;
+    border-right: 1px solid #fff;
+    background: #48907F url(../images/j.png) center no-repeat;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.boxlast button:last-child{
+    float: right;
+    border-radius: 0 4px 4px 0;
+    border-right: 0;
+    border-left: 1px solid #fff;
+    background: #48907F url(../images/jia.png) center no-repeat;
+}
+
+.boxlast input{
+    float: left;
+    width: 300px;
+    height: 56px;
+    border: 0;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    font-style: oblique;
+    background: #48907F;
+    outline: none;
+}
+
+.prolast{
+    width: 100%;
+    margin-top: 36px;
+}
+
+.prolast a{
+    width: 416px;
+    height: 58px;
+    background: #48907F;
+    border-radius: 4px;
+    display: block;
+    font-size: 24px;
+    color: #D0DAD1;
+    text-align: center;
+    line-height: 58px;
+    font-style: oblique;
+}

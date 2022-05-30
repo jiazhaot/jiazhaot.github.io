@@ -3,6 +3,11 @@ html {
     font-size: 50px;
 }
 
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-size: 16px;
 }
@@ -81,16 +86,15 @@ body,button,input,section {
 .headercon h1 {
     font-size: 45px;
     color: #3D7666;
-    font-weight: 500;
     letter-spacing: 0px;
     text-align: center;
     line-height: 106px;
-    font-style: oblique;
     text-shadow: 2px 4px #fff;
 }
 
 .headercon h1 a {
-    color: #3D7666
+    color: #3D7666;
+    text-decoration: none;
 }
 
 .headerright {
@@ -195,7 +199,6 @@ body,button,input,section {
     font-size: 30px;
     color: #264840;
     font-weight: 400;
-    font-style: oblique;
 }
 
 .sright p {
@@ -235,7 +238,6 @@ body,button,input,section {
 .navbox h1 {
     font-size: 45px;
     color: #3D7666;
-    font-style: oblique;
     font-weight: 500;
     padding-bottom: 30px;
     border-bottom: 1px solid #ACA1A1;
@@ -251,7 +253,6 @@ body,button,input,section {
     display: block;
     font-size: 30px;
     font-weight: 500;
-    font-style: oblique;
     padding: 20px 0;
     box-sizing: border-box;
     border-bottom: 1px solid #ACA1A1;
@@ -319,10 +320,8 @@ body,button,input,section {
     color: #3D7666;
     text-decoration: underline;
     text-align: right;
-    cursor: default;
-    font-style: oblique;
+    cursor: pointer;
     line-height: 70px;
-    font-weight: 500;
     text-shadow: 2px 2px #fff;
 }
 
@@ -444,7 +443,6 @@ body,button,input,section {
 .boxright h5{
     font-size: 50px;
     color: #264840;
-    font-weight: 500;
     margin-bottom: 26px;
 }
 
@@ -455,24 +453,21 @@ body,button,input,section {
 .boxtexted h6{
     font-size: 24px;
     color: #264840;
-    font-weight: 500;
+    font-weight: 550;
     margin-bottom: 24px;
-    font-style: oblique;
 }
 
 .boxtexted .texted{
-    font-size: 24px;
+    font-size: 27px;
     color: #264840;
-    font-weight: 500;
+    font-weight: 550;
     margin-bottom: 24px;
-    font-style: oblique;
 }
 
 .boxtexted .lastext{
     font-size: 24px;
     color: #264840;
     font-weight: 500;
-    font-style: oblique;
 }
 
 .boxlast{
@@ -487,7 +482,7 @@ body,button,input,section {
 
 .boxlast button{
     float: left;
-    width: 56px;
+    width: 55px;
     height: 56px;
     border: 0;
     border-right: 1px solid #fff;
@@ -512,7 +507,6 @@ body,button,input,section {
     font-size: 20px;
     color: #fff;
     text-align: center;
-    font-style: oblique;
     background: #48907F;
     outline: none;
 }
@@ -532,5 +526,6 @@ body,button,input,section {
     color: #D0DAD1;
     text-align: center;
     line-height: 58px;
-    font-style: oblique;
+    text-decoration: none;
 }
+

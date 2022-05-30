@@ -16,6 +16,10 @@ body,button,input,section {
     font-family: 'Roboto', sans-serif;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* clearfloat */
 .clearfloat::after {
     content: "";
@@ -378,6 +382,7 @@ body,button,input,section {
 .boxed{
     width: 100%;
     background-color: #C2CBC6;
+    height: 82%;
 }
 
 .footer{
@@ -529,3 +534,133 @@ body,button,input,section {
     text-decoration: none;
 }
 
+/* productlist */
+.procontainer{
+    width: 100%;
+    background: #C2CBC6;
+    /* min-height: 100%; */
+    height: 82%;
+}
+
+.pleft{
+    width: 326px;
+    float: left;
+    position: relative;
+}
+
+.pleft h4{
+    color: #fff;
+    font-size: 80px;
+    width: 70px;
+    text-align: center;
+    position: absolute;
+    top: 120px;
+    right: 60px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.29);
+}
+
+.pleft h5{
+    color: #fff;
+    font-size: 80px;
+    width: 70px;
+    text-align: center;
+    position: absolute;
+    bottom: 120px;
+    left: 60px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.29);
+}
+
+.pright{
+    float: right;
+    width: calc(100% - 326px);
+    height: 100%;
+    padding:32px 4%;
+    box-sizing: border-box;
+}
+
+.prlist{
+    width: 100%;
+}
+
+.prlist ul li{
+    float: left;
+    width: 25%;
+    margin-bottom: 30px;
+}
+
+.prlist ul li a{
+    display: block;
+}
+
+.proimg{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.proimg img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.protexted{
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.protexted h5{
+    font-size: 24px;
+    color: #48907F;
+    font-weight: 400;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.protexted p{
+    font-size: 24px;
+    color: #48907F;
+    font-weight: 400;
+    text-align: center;
+}
+
+.scrpage{
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.scrpage ul{
+    display: inline-block;
+}
+
+.scrpage .pages{
+    font-size: 24px;
+    color: #48907F;
+    text-decoration: underline;
+    vertical-align: 17px;
+    margin-left: 60px;
+}
+
+.scrpage ul li{
+    float: left;
+    margin-right: 20px;
+}
+
+.scrpage ul li:last-child{
+    margin-right: 0;
+}
+
+.scrpage ul li a{
+    font-size: 24px;
+    color: #48907F;
+    border: 3px solid #48907F;
+    display: block;
+    padding: 6px 16px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background: transparent;
+}

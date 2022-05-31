@@ -37,6 +37,10 @@ a{
     flex: 1;
 }
 
+.align-items-center{
+    align-items: center;
+}
+
 /* index */
 .box {
     width: 100%;

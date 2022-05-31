@@ -771,3 +771,50 @@ a{
     outline: none;
     color: #3D7666;
 }
+
+.cartq input{
+    display: inline-block;
+    max-width: 40px;
+    font-size: 34px;
+    text-align: center;
+    color: #3D7666;
+    border: 0;
+    background: transparent;
+    outline: none;
+    height: 40px;
+}
+
+.smiconsed{
+    top: auto;
+    bottom: 60px;
+    transform: translateY(0);
+}
+
+.cartlast{
+    width: 100%;
+    margin-top: 80px;
+}
+
+.cartlastcon{
+    width: 100%;
+    text-align: right;
+}
+
+.cartlastcon a{
+    display: inline-block;
+    font-size: 34px;
+    color: #3D7666;
+    width: 344px;
+    height: 96px;
+    margin-right: 30px;
+    background: #EAEEEB;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 96px;
+}
+
+.cartlastcon a:last-child{
+    background: #48907F;
+    color: #D0DAD1;
+    margin-right: 0;
+}

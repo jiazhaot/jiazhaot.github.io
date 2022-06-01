@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advent Game info</title>
+    <title>Advent Game information</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
     
@@ -68,64 +68,66 @@
             </div>
         </div>
         
-        <div class="procontainer clearfloat display-flex">
-            <div class="pleft" style="background: url(/images/ca1.png) center no-repeat;background-size: cover;">
-                <h4>M Y</h4>
-                <h5>C A R T</h5>
+        <div class="info clearfloat">
+            <div class="infoleft">
+                <div class="checkoutnav clearfloat">
+                    <a href="/html/cart.html">Cart</a>
+                    <p></p>
+                    <a href="/html/info.html" class="active">Information</a>
+                    <p></p>
+                    <a href="/html/shipping.html">Shipping</a>
+                    <p></p>
+                    <a href="/html/pay.html">Payment</a>
+                    <p></p>
+                    <a href="/html/final.html">Finishing</a>
+                </div>
             </div>
-            <div class="pright">
-                <div class="cart">
-                    <div class="cartup clearfloat">
-                       <p>Product</p>
-                       <p>Price</p>
-                       <p>Quantity</p>
-                       <p>Total</p>
+            <div class="infocontainer">
+                <div class="infobox">
+                    <div class="infotop">
+                        <h5>Contact information</h5>
+                        <input type="text" placeholder="Phone number or email">
                     </div>
-                    <div class="cartlist clearfloat display-flex align-items-center">
-                        <div class="cartfirst clearfloat">
-                            <div class="cartimg"><img src="/images/ca2.png" alt=""></div>
-                            <div class="cartext">
-                                <p>JEKCA: <br/>POMERANIAN</p>
-                            </div>
+                    <div class="infomid">
+                        <h5>Shipping address</h5>
+                        <div class="infocontext clearfloat">
+                            <input type="text" placeholder="First name">
+                            <input type="text" placeholder="Last name">
                         </div>
-                        <div class="cartmoney">
-                            <p>$99.95</p>
+                        <input type="text" placeholder="Country" class="inputs">
+                        <input type="text" placeholder="Address" class="inputs">
+						<input type="text" placeholder="Apartment, suite etc." class="inputs">
+                        <div class="infocontext clearfloat">
+                            <input type="text" placeholder="Suburb">
+							<input type="text" placeholder="State/territory">
                         </div>
-                        <div class="cartq clearfloat">
-                            <button class="cjian">-</button>
-                            <input type="number" value="1" class="cnum">
-                            <button class="cadd">+</button>
-                        </div>
-                        <div class="cartmoney">
-                            <p>$99.95</p>
-                        </div>
+                        <input type="text" placeholder="Postcode" class="inputs">
+                        <input type="text" placeholder="Phone number" class="inputs">
                     </div>
-
-                    <div class="cartlist clearfloat display-flex align-items-center">
-                        <div class="cartfirst clearfloat">
-                            <div class="cartimg"><img src="/images/l4.png" alt=""></div>
-                            <div class="cartext">
-                                <p>TELESTRATIONS</p>
-                            </div>
-                        </div>
-                        <div class="cartmoney">
-                            <p>$49.95</p>
-                        </div>
-                        <div class="cartq clearfloat">
-                            <button class="cjian">-</button>
-                            <input type="number" value="3" class="cnum">
-                            <button class="cadd">+</button>
-                        </div>
-                        <div class="cartmoney">
-                            <p>$99.95</p>
-                        </div>
+                    <div class="infolast clearfloat">
+                        <a href="/html/cart.html" class="backcart">< Cart</a>
+                        <a href="/html/shipping.html" class="toship">Shipping ></a>
                     </div>
                 </div>
-                <div class="cartlast clearfloat">
-                    <div class="cartlastcon">
-                        <a href="/html/productlist.html">Continue Shopping</a>
-                        <a href="/html/info.html">Checkout · $99.95</a>
+            </div>
+            <div class="inforight">
+                <h5><p><img src="/images/cart.png"></p> Cart Summary</h5>
+                <div class="infoup clearfloat">
+                    <div class="infoupleft">
+                        <img src="/images/gs.png" alt="">
                     </div>
+                    <div class="infoupright">
+                        <h6>JEKCA: POMERANIAN<br/>$99.95</h6>
+						<p>Quantity: 1</p>
+                    </div>
+                </div>
+                <div class="infonum clearfloat">
+                    <h6>Subtotal</h6>
+					<p>$99.95</p>
+                </div>
+                <div class="infobase clearfloat">
+                    <h6>Total <br/><span>Including $9.99 in taxes</span></h6>
+					<p>$99.95</p>
                 </div>
             </div>
         </div>

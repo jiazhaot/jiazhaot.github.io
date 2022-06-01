@@ -665,6 +665,10 @@ a{
     background: transparent;
 }
 
+.scrpage ul li.active a{
+    color: black;
+}
+
 /* cart */
 .cat{
     width: 100%;
@@ -814,3 +818,4 @@ a{
     color: #D0DAD1;
     margin-right: 0;
 }
+

@@ -824,7 +824,7 @@ a{
 .info{
     width: 100%;
     height: calc(100vh - 194px);
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .infoleft{
@@ -1083,3 +1083,4 @@ a{
     font-size: 24px;
     color: #3D7666; 
 }
+

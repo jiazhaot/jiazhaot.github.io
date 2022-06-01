@@ -29,11 +29,11 @@ a{
     height: 0;
 }
 
-.d-flex {
+.display-flex {
     display: flex;
 }
 
-.flex_1 {
+.flex-1 {
     flex: 1;
 }
 

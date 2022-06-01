@@ -819,3 +819,147 @@ a{
     margin-right: 0;
 }
 
+/* info */
+
+.info{
+    width: 100%;
+    height: calc(100vh - 194px);
+    /* overflow: hidden; */
+}
+
+.infoleft{
+    float: left;
+    width: 20%;
+    height: 100%;
+    box-shadow: inset 0px 3px 6px rgba(0,0,0,0.29);
+    background: #AEBFB6;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+.checkoutnav{
+    display: table;
+    margin: 0 auto;
+}
+
+.checkoutnav a{
+    font-size: 32px;
+    color: #EAEEEB;
+    display: block;
+    text-align: center;
+}
+
+.checkoutnav a.active{
+    color: #3D7666;
+}
+
+.checkoutnav p{
+    display: block;
+    width: 40px;
+    height: 27px;
+    background: url(/images/jts.png) center no-repeat;
+    background-size: 100% 100%;
+    margin: 10% auto;
+}
+
+.infocontainer{
+    width: 50%;
+    height: 100%;
+    float: left;
+    overflow-y: scroll;
+    background: #C2CBC6;
+}
+
+.infobox{
+    width: 100%;
+    padding: 40px 4%;
+    box-sizing: border-box;
+}
+
+.infotop{
+    width: 100%;
+    margin-bottom: 13px;
+}
+
+.infotop h5{
+    font-size: 24px;
+    color: #3D7666;
+    margin-bottom: 10px;
+}
+
+.infotop input{
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.29);
+    font-size: 16px;
+    color: #333;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border: 0;
+    background-color: #EAEEEB;
+    border-radius: 8px;
+}
+
+.infomid{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.infomid h5{
+    font-size: 24px;
+    color: #3D7666;
+    margin-bottom: 10px;
+}
+
+.infocontext{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.infocontext input{
+    width: 49%;
+    height: 60px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.29);
+    font-size: 16px;
+    color: #333;
+    margin-right: 2%;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border: 0;
+    background-color: #EAEEEB;
+    border-radius: 8px;
+    float: left;
+}
+
+.infocontext input:last-child{
+    margin-right: 0;
+}
+
+.inforight{
+    float: right;
+    width: 30%;
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: inset 0px 3px 6px rgba(0,0,0,0.29);
+    background: #AEBFB6;
+    padding: 40px 4% 0 4%;
+}
+
+.inforight h5{
+    font-size: 28px;
+    color: #3D7666;
+    margin-bottom: 40px;
+}
+
+.inforight h5 p{
+    display: inline-block;
+    width: 46px;
+    vertical-align: middle;
+}
+
+.inforight h5 p img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+

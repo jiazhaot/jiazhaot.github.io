@@ -3,7 +3,7 @@ html {
     font-size: 50px;
 }
 
-html,body{
+html,body {
     width: 100%;
     height: 100%;
 }
@@ -12,7 +12,7 @@ body,button,input,section {
     font-family: 'Roboto', sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -33,7 +33,7 @@ a{
     flex: 1;
 }
 
-.align-items-center{
+.align-items-center {
     align-items: center;
 }
 
@@ -366,116 +366,114 @@ a{
     flex-direction: column;
 }
 
-
-
 /* product */
-.headered .headerleft a{
+.headered .headerleft a {
     display: block;
 }
 
-.headerbuted{
+.headerbuted {
     border-bottom: 1px solid rgba(5,4,4,0.47);
     width: 100%;
     box-sizing: border-box;
 }
 
-.boxed{
+.boxed {
     width: 100%;
     background-color: #C2CBC6;
     height: 82%;
 }
 
-.footer{
+.footer {
     width: 100%;
     height: 44px;
     background-color: rgba(1,75,54,0.76);
 }
 
-.boxcontainer{
+.boxcontainer {
     width: 100%;
     padding: 60px 8%;
     box-sizing: border-box;
 }
 
-.boxleft{
+.boxleft {
     float: left;
     width: 57%;
     margin-right: 3%;
 }
 
-.boxlist{
+.boxlist {
     float: left;
     width: 138px;
     margin-right: 58px;
 }
 
-.boxlist p{
+.boxlist p {
     display: block;
     width: 100%;
     cursor: pointer;
     margin-bottom: 42px;
 }
 
-.boxlist p img{
+.boxlist p img {
     display: block;
     max-width: 100%;
 }
 
-.boxbig{
+.boxbig {
     float: left;
     width: calc(100% - 196px);
 }
 
-.boxbig p{
+.boxbig p {
     display: none;
     width: 100%;
 }
 
-.boxbig p:first-child{
+.boxbig p:first-child {
     display: block;
 }
 
-.boxbig p img{
+.boxbig p img {
     display: block;
     max-width: 100%;
 }
 
-.boxright{
+.boxright {
     float: left;
     width: 40%;
 }
 
-.boxright h5{
+.boxright h5 {
     font-size: 50px;
     color: #264840;
     margin-bottom: 26px;
 }
 
-.boxtexted{
+.boxtexted {
     width: 100%;
 }
 
-.boxtexted h6{
+.boxtexted h6 {
     font-size: 24px;
     color: #264840;
     font-weight: 550;
     margin-bottom: 24px;
 }
 
-.boxtexted .texted{
+.boxtexted .texted {
     font-size: 27px;
     color: #264840;
     font-weight: 550;
     margin-bottom: 24px;
 }
 
-.boxtexted .lastext{
+.boxtexted .lastext {
     font-size: 24px;
     color: #264840;
     font-weight: 500;
 }
 
-.boxlast{
+.boxlast {
     width: 416px;
     height: 58px;
     background: #48907F;
@@ -485,7 +483,7 @@ a{
     margin-top: 24px;
 }
 
-.boxlast button{
+.boxlast button {
     float: left;
     width: 55px;
     height: 56px;
@@ -496,7 +494,7 @@ a{
     outline: none;
 }
 
-.boxlast button:last-child{
+.boxlast button:last-child {
     float: right;
     border-radius: 0 4px 4px 0;
     border-right: 0;
@@ -504,7 +502,7 @@ a{
     background: #48907F url(../images/jia.png) center no-repeat;
 }
 
-.boxlast input{
+.boxlast input {
     float: left;
     width: 300px;
     height: 56px;
@@ -516,12 +514,12 @@ a{
     outline: none;
 }
 
-.prolast{
+.prolast {
     width: 100%;
     margin-top: 36px;
 }
 
-.prolast a{
+.prolast a {
     width: 416px;
     height: 58px;
     background: #48907F;
@@ -535,20 +533,20 @@ a{
 }
 
 /* productlist */
-.procontainer{
+.procontainer {
     width: 100%;
     background: #C2CBC6;
     /* min-height: 100%; */
     height: 82%;
 }
 
-.pleft{
+.pleft {
     width: 326px;
     float: left;
     position: relative;
 }
 
-.pleft h4{
+.pleft h4 {
     color: #fff;
     font-size: 80px;
     width: 70px;
@@ -559,7 +557,7 @@ a{
     text-shadow: 0 3px 6px rgba(0,0,0,0.29);
 }
 
-.pleft h5{
+.pleft h5 {
     color: #fff;
     font-size: 80px;
     width: 70px;
@@ -570,46 +568,46 @@ a{
     text-shadow: 0 3px 6px rgba(0,0,0,0.29);
 }
 
-.pright{
+.pright {
     float: right;
     width: calc(100% - 326px);
     height: 100%;
-    padding:32px 4%;
+    padding: 32px 4%;
     box-sizing: border-box;
 }
 
-.prlist{
+.prlist {
     width: 100%;
 }
 
-.prlist ul li{
+.prlist ul li {
     float: left;
     width: 25%;
     margin-bottom: 30px;
 }
 
-.prlist ul li a{
+.prlist ul li a {
     display: block;
 }
 
-.proimg{
+.proimg {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.proimg img{
+.proimg img {
     display: block;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.protexted{
+.protexted {
     width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
 }
 
-.protexted h5{
+.protexted h5 {
     font-size: 24px;
     color: #48907F;
     font-weight: 400;
@@ -620,24 +618,24 @@ a{
     cursor: pointer;
 }
 
-.protexted p{
+.protexted p {
     font-size: 24px;
     color: #48907F;
     font-weight: 400;
     text-align: center;
 }
 
-.scrpage{
+.scrpage {
     width: 100%;
     text-align: center;
     margin-top: 60px;
 }
 
-.scrpage ul{
+.scrpage ul {
     display: inline-block;
 }
 
-.scrpage .pages{
+.scrpage .pages {
     font-size: 24px;
     color: #48907F;
     text-decoration: underline;
@@ -645,16 +643,16 @@ a{
     margin-left: 60px;
 }
 
-.scrpage ul li{
+.scrpage ul li {
     float: left;
     margin-right: 20px;
 }
 
-.scrpage ul li:last-child{
+.scrpage ul li:last-child {
     margin-right: 0;
 }
 
-.scrpage ul li a{
+.scrpage ul li a {
     font-size: 24px;
     color: #48907F;
     border: 3px solid #48907F;
@@ -665,22 +663,22 @@ a{
     background: transparent;
 }
 
-.scrpage ul li.active a{
+.scrpage ul li.active a {
     color: black;
 }
 
 /* cart */
-.cat{
+.cat {
     width: 100%;
 }
 
-.cartup{
+.cartup {
     width: 100%;
     height: 100px;
     background: #EAEEEB;
 }
 
-.cartup p{
+.cartup p {
     float: left;
     font-size: 45px;
     color: #3D7666;
@@ -689,79 +687,79 @@ a{
     text-align: center;
 }
 
-.cartup p:nth-child(1){
+.cartup p:nth-child(1) {
     width: 40%;
     text-align: left;
     padding: 0 40px;
     box-sizing: border-box;
 }
 
-.cartup p:nth-child(2){
+.cartup p:nth-child(2) {
     width: 20%;
 }
 
-.cartup p:nth-child(3){
+.cartup p:nth-child(3) {
     width: 20%;
 }
 
-.cartup p:nth-child(4){
+.cartup p:nth-child(4) {
     width: 20%;
 }
 
-.cartlist{
+.cartlist {
     width: 100%;
     padding: 25px;
     border-bottom: 1px solid rgba(5,4,4,0.47);
     box-sizing: border-box;
 }
 
-.cartfirst{
+.cartfirst {
     float: left;
     width: 40%;
     padding: 0 40px;
     box-sizing: border-box;
 }
 
-.cartimg{
+.cartimg {
     float: left;
     width: 28%;
     margin-right: 2%;
 }
 
-.cartimg img{
+.cartimg img {
     display: block;
     width: 100%;
     border-radius: 10px;
 }
 
-.cartext{
+.cartext {
     float: left;
     width: 70%;
 }
 
-.cartext p{
+.cartext p {
     font-size: 30px;
     color: #48907F;
 }
 
-.cartmoney{
+.cartmoney {
     float: left;
     width: 20%;
 }
 
-.cartmoney p{
+.cartmoney p {
     font-size: 45px;
     color: #3D7666;
     text-align: center;
 }
 
-.cartq{
+.cartq {
     float: left;
     width: 20%;
     text-align: center;
 }
 
-.cartq button{
+.cartq button {
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -772,7 +770,7 @@ a{
     color: #3D7666;
 }
 
-.cartq input{
+.cartq input {
     display: inline-block;
     max-width: 40px;
     font-size: 34px;
@@ -784,23 +782,23 @@ a{
     height: 40px;
 }
 
-.smiconsed{
+.smiconsed {
     top: auto;
     bottom: 60px;
     transform: translateY(0);
 }
 
-.cartlast{
+.cartlast {
     width: 100%;
     margin-top: 80px;
 }
 
-.cartlastcon{
+.cartlastcon {
     width: 100%;
     text-align: right;
 }
 
-.cartlastcon a{
+.cartlastcon a {
     display: inline-block;
     font-size: 34px;
     color: #3D7666;
@@ -813,21 +811,20 @@ a{
     line-height: 96px;
 }
 
-.cartlastcon a:last-child{
+.cartlastcon a:last-child {
     background: #48907F;
     color: #D0DAD1;
     margin-right: 0;
 }
 
 /* info */
-
-.info{
+.info {
     width: 100%;
     height: calc(100vh - 194px);
     overflow: hidden;
 }
 
-.infoleft{
+.infoleft {
     float: left;
     width: 20%;
     height: 100%;
@@ -837,23 +834,23 @@ a{
     box-sizing: border-box;
 }
 
-.checkoutnav{
+.checkoutnav {
     display: table;
     margin: 0 auto;
 }
 
-.checkoutnav a{
+.checkoutnav a {
     font-size: 32px;
     color: #EAEEEB;
     display: block;
     text-align: center;
 }
 
-.checkoutnav a.active{
+.checkoutnav a.active {
     color: #3D7666;
 }
 
-.checkoutnav p{
+.checkoutnav p {
     display: block;
     width: 40px;
     height: 27px;
@@ -862,7 +859,7 @@ a{
     margin: 10% auto;
 }
 
-.infocontainer{
+.infocontainer {
     width: 50%;
     height: 100%;
     float: left;
@@ -870,24 +867,24 @@ a{
     background: #C2CBC6;
 }
 
-.infobox{
+.infobox {
     width: 100%;
     padding: 40px 4%;
     box-sizing: border-box;
 }
 
-.infotop{
+.infotop {
     width: 100%;
     margin-bottom: 13px;
 }
 
-.infotop h5{
+.infotop h5 {
     font-size: 24px;
     color: #3D7666;
     margin-bottom: 10px;
 }
 
-.infotop input{
+.infotop input {
     width: 100%;
     height: 60px;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.29);
@@ -900,23 +897,23 @@ a{
     border-radius: 8px;
 }
 
-.infomid{
+.infomid {
     width: 100%;
     margin-bottom: 40px;
 }
 
-.infomid h5{
+.infomid h5 {
     font-size: 24px;
     color: #3D7666;
     margin-bottom: 10px;
 }
 
-.infocontext{
+.infocontext {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.infocontext input{
+.infocontext input {
     width: 49%;
     height: 60px;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.29);
@@ -931,11 +928,11 @@ a{
     float: left;
 }
 
-.infocontext input:last-child{
+.infocontext input:last-child {
     margin-right: 0;
 }
 
-.infomid .inputs{
+.infomid .inputs {
     width: 100%;
     height: 60px;
     box-shadow: 0px 3px 6px rgba(0,0,0,0.29);
@@ -950,11 +947,11 @@ a{
     margin-bottom: 20px;
 }
 
-.infolast{
+.infolast {
     width: 100%;
 }
 
-.backcart{
+.backcart {
     float: left;
     width: 200px;
     height: 60px;
@@ -967,7 +964,7 @@ a{
     color: #3D7666;
 }
 
-.toship{
+.toship {
     float: right;
     width: 200px;
     height: 60px;
@@ -980,7 +977,7 @@ a{
     color: #fff;
 }
 
-.inforight{
+.inforight {
     float: right;
     width: 30%;
     height: 100%;
@@ -990,108 +987,107 @@ a{
     padding: 40px 4% 0 4%;
 }
 
-.inforight h5{
+.inforight h5 {
     font-size: 28px;
     color: #3D7666;
     margin-bottom: 40px;
 }
 
-.inforight h5 p{
+.inforight h5 p {
     display: inline-block;
     width: 46px;
     vertical-align: middle;
 }
 
-.inforight h5 p img{
+.inforight h5 p img {
     display: block;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.infoup{
+.infoup {
     width: 100%;
     border-bottom: 1px solid rgba(5,4,4,0.47);
     box-sizing: border-box;
     padding-bottom: 20px;
 }
 
-.infoupleft{
+.infoupleft {
     float: left;
     width: 113px;
     margin-right: 17px;
 }
 
-.infoupleft img{
+.infoupleft img {
     display: block;
     max-width: 100%;
 }
 
-.infoupright{
+.infoupright {
     float: left;
     width: calc(100% - 130px);
 }
 
-.infoupright h6{
+.infoupright h6 {
     font-size: 24px;
     color: #3D7666;
 }
 
-.infoupright p{
+.infoupright p {
     font-size: 20px;
     color: #3D7666;
     font-weight: 400;
     text-align: right;
 }
 
-.infonum{
+.infonum {
     width: 100%;
     padding: 20px 0;
     border-bottom: 1px solid rgba(5,4,4,0.47);
     box-sizing: border-box;
 }
 
-.infonum h6{
+.infonum h6 {
     float: left;
     font-size: 24px;
     color: #686E6B;
 }
 
-.infonum p{
+.infonum p {
     float: right;
     font-size: 24px;
     color: #3D7666;
 }
 
-.infobase{
+.infobase {
     width: 100%;
     padding-top: 20px;
     box-sizing: border-box;
 }
 
-.infobase h6{
+.infobase h6 {
     float: left;
     font-size: 24px;
     color: #686E6B;
 }
 
-.infobase h6 span{
+.infobase h6 span {
     font-size: 14px;
 }
 
-.infobase p{
+.infobase p {
     float: right;
     font-size: 24px;
-    color: #3D7666; 
+    color: #3D7666;
 }
 
 /* shipping */
-
-.ship{
+.ship {
     width: 100%;
     margin-bottom: 40px;
 }
 
-.shiplist{
+.shiplist {
     width: 100%;
     padding: 20px;
     border-radius: 8px;
@@ -1101,23 +1097,23 @@ a{
     margin-bottom: 20px;
 }
 
-.shipleft{
+.shipleft {
     float: left;
     width: 70%;
 }
 
-.shipleft h5{
+.shipleft h5 {
     font-size: 20px;
     color: #3D7666;
     margin-bottom: 10px;
 }
 
-.shipleft p{
+.shipleft p {
     font-size: 18px;
     color: #B6BEBA;
 }
 
-.shipright{
+.shipright {
     width: 25%;
     text-align: right;
     margin-left: 5%;
@@ -1126,30 +1122,30 @@ a{
     justify-content: flex-end;
 }
 
-.shipright a{
+.shipright a {
     font-size: 20px;
     color: #3D7666;
     display: inline-block;
     outline: none;
 }
 
-.shipbase{
+.shipbase {
     width: 100%;
 }
 
-.shipbase h5{
-    font-size: 24px;
+.shipbase h5 {
+    font-size: 35px;
     color: #3D7666;
     margin-bottom: 10px;
 }
 
-.shipcontext{
+.shipcontext {
     width: 100%;
     padding-top: 20px;
     box-sizing: border-box;
 }
 
-.shiplisted{
+.shiplisted {
     width: 100%;
     margin-bottom: 34px;
     border-radius: 8px;
@@ -1161,19 +1157,19 @@ a{
     cursor: pointer;
 }
 
-.shiplisted h5{
+.shiplisted h5 {
     float: left;
     font-size: 24px;
     color: #3D7666;
     line-height: 60px;
 }
 
-.shiplisted h5 span{
+.shiplisted h5 span {
     display: inline-block;
     margin-left: 20px;
 }
 
-.shiplisted p1{
+.shiplisted p1 {
     float: right;
     width: 20px;
     height: 20px;
@@ -1182,7 +1178,7 @@ a{
     margin-top: 20px;
 }
 
-.shiplisted p2{
+.shiplisted p2 {
     float: right;
     width: 20px;
     height: 20px;
@@ -1191,3 +1187,141 @@ a{
     margin-top: 20px;
 }
 
+/* payment */
+.pay {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: #EAEEEB;
+    border-radius: 8px;
+    margin-bottom: 60px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.29);
+    margin-top: 20px;
+}
+
+.payup {
+    width: 100%;
+    border-bottom: 1px solid rgba(61,118,102,0.16);
+    padding-bottom: 2px;
+    box-sizing: border-box;
+}
+
+.payup h5 {
+    float: left;
+    font-size: 24px;
+    color: #3D7666;
+    margin-top: 14px;
+}
+
+.payup h5 i {
+    width: 20px;
+    height: 20px;
+    background: url(../images/q2.png) center no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    vertical-align: -2px;
+}
+
+.payup p {
+    float: right;
+}
+
+.payup p img {
+    display: block;
+    max-width: 100%;
+}
+
+.paylist {
+    width: 100%;
+    padding: 14px 0;
+    box-sizing: border-box;
+}
+
+.paylist .inputs {
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.29);
+    font-size: 16px;
+    color: #333;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border: 0;
+    background-color: #EAEEEB;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.paypal, .googlepay {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #80808033;
+}
+
+.paypal i, .googlepay i {
+    width: 20px;
+    height: 20px;
+    background: url(../images/q1.png) center no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+}
+
+.paypal img {
+    width: 20%;
+}
+
+.paypal {
+    margin-top: 40px;
+}
+
+.googlepay {
+    height: 60px;
+    padding-bottom: 0px;
+}
+
+.googlepay img {
+    width: 12%;
+}
+
+.billinged {
+    width: 100%;
+    padding: 10px 20px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    background-color: #EAEEEB;
+    border-radius: 8px;
+    margin-bottom: 60px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 29%);
+    margin-top: 20px;
+}
+
+.billsame i {
+    width: 20px;
+    height: 20px;
+    background: url(../images/q2.png) center no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+}
+
+.billdiff i {
+    width: 20px;
+    height: 20px;
+    background: url(../images/q1.png) center no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+}
+
+.billinged p {
+    display: inline-block;
+    font-size: 26px;
+    color: #3D7666;
+}
+
+.billsame {
+    border-bottom: 1px solid #80808033;
+    padding-bottom: 20px;
+}

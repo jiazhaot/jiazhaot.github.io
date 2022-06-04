@@ -1653,3 +1653,29 @@ a {
     }
 }
 
+
+@media screen and (max-width: 980px){
+    /* indec */
+    .headersearch{
+        width: 90%;
+    }
+
+    .searchbox{
+        width: 100%;
+        padding: 10px;
+        left: 50%;
+    }
+
+    .headerright a{
+        margin-right: 20px;
+    }
+
+    .headerleft .navimg{
+        margin-right: 20px;
+    }
+
+    .sright h5{
+        font-size: 20px;
+    }
+    
+}

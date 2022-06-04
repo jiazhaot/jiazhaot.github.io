@@ -1627,3 +1627,29 @@ a {
     }
 }
 
+@media screen and (max-width: 1025px){
+	/* productlist page */
+    .procontainer{
+        display: block;
+    }
+
+	.pleft{
+        float: none;
+        width: 100%;
+        padding: 40px 4%;
+        box-sizing: border-box;
+    }
+
+	.pright{
+        float: none;
+        width: 100%;
+    }
+
+	.pleft h4,.pleft h5{
+        font-size: 32px;
+        width:auto;
+        position:static;
+        text-align: center;
+    }
+}
+

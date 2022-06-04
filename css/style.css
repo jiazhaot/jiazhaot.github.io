@@ -1352,24 +1352,19 @@ a {
 
 /* responsive */
 
-@media screen and (max-width: 1560px){   
+@media screen and (max-width: 1520px){   
     /* product page */
-    .boxright h5{
-        margin-bottom: 14px;
-        font-size: 32px;
-    }
-
-    .boxtexted h6,.boxtexted .texted,.boxtexted .lastext{
-        font-size: 20px;
-        margin-bottom: 6px;
-    }
-
     .boxcontainer{
         padding: 60px 6%;
     }
 }
 
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1420px){
+    /* cart */
+    .cartmoney p {
+        font-size: 36px;
+    }
+    
     /* product page */
     .boxlast{
         margin-top: 12px;
@@ -1377,16 +1372,6 @@ a {
     
     .prolast{
         margin-top: 12px;
-    }
-
-    .boxright h5{
-        margin-bottom: 10px;
-        font-size: 24px;
-    }
-
-    .boxtexted h6,.boxtexted .texted,.boxtexted .lastext{
-        font-size: 16px;
-        margin-bottom: 4px;
     }
 
     .boxcontainer{
@@ -1412,7 +1397,72 @@ a {
     }
 }
 
-@media screen and (max-width: 1370px){
+@media screen and (max-width: 1320px){
+    /* index */
+    .first{
+        padding-right: 20%;
+    }
+    
+    .headerup{
+        height: 20px;
+    }
+
+    .headerbut{
+        padding: 0 4%;
+    }
+
+    .headersearch{
+        width: 600px;
+    }
+
+    /* product */
+    .boxright h5 {
+        font-size: 40px;
+    }
+
+    .boxtexted .texted {
+        font-size: 24px;
+    }
+
+    /* productlist page */
+    .pleft h4,.pleft h5{
+        font-size: 55px;
+        width: 50px;
+    }
+
+    .prlist ul li{
+        height: 32%;
+        width: 32%;
+        margin-right: 2%;
+    }
+
+	.prlist ul li:nth-child(3n){
+        margin-right: 0;
+    }
+
+    .prlist{
+        height: 90%;
+        width: 100%;
+    }
+
+    .prlist ul.clearfloat{
+        height: 100%;
+    }
+
+    .prlist ul li a{
+        height: 100%;
+    }
+
+    .proimg{
+        height: 65%;
+        max-width: 100%;
+    }
+
+    .proimg img{
+        height: 100%;
+        max-width: 100%;
+    }
+
     /* cart page */
     .cartup{
         height: 60px;
@@ -1449,40 +1499,9 @@ a {
         line-height: 60px;
         width: 260px;
     }
-}
 
-@media screen and (max-width: 1320px){
-    /* index */
-    .first{
-        padding-right: 20%;
-    }
-    
-    .headerup{
-        height: 20px;
-    }
-
-    .headerbut{
-        padding: 0 4%;
-    }
-
-    .headersearch{
-        width: 600px;
-    }
-
-
-    /* productlist page */
-    .pleft h4,.pleft h5{
-        font-size: 40px;
-        width:40px;
-    }
-
-    .prlist ul li{
-        width: 32%;
-        margin-right: 2%;
-    }
-
-	.prlist ul li:nth-child(3n){
-        margin-right: 0;
+    .cartq input{
+        font-size: 26px;
     }
 
     /* info page */
@@ -1512,6 +1531,15 @@ a {
 
     .checkoutnav a{
         font-size: 24px;
+    }
+
+    /* payment */
+    .billinged p {
+        font-size: 24px;
+    }
+
+    .shipbase h5 {
+        font-size: 33px;
     }
 }
 
@@ -1575,7 +1603,7 @@ a {
 
 
 @media screen and (max-width: 980px){
-    /* indec */
+    /* index */
     .headersearch{
         width: 90%;
     }
@@ -1588,5 +1616,20 @@ a {
         margin-right: 20px;
     }
 
-    
+    /* product page */
+    .boxcontainer{
+        display: block;
+    }
+
+    .boxleft{
+        float: none;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .boxright{
+        float: none;
+        width: 100%;
+        padding-top: 20px;
+    }
 }

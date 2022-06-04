@@ -1463,6 +1463,10 @@ a {
         max-width: 100%;
     }
 
+    .procontainer {
+        min-height: 100%;
+    }
+
     /* cart page */
     .cartup{
         height: 60px;
@@ -1539,25 +1543,37 @@ a {
     }
 
     .shipbase h5 {
-        font-size: 33px;
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 1215px){
+    .cartq {
+        width: 22%;
+    }
+
+    .navbox {
+        width: 560px;
     }
 }
 
 @media screen and (max-width: 1210px){
 	/* index */
+
     .headerright a{
         margin-right: 24px;
     }
 
 	.headercon h1{
-        font-size: 35px;
+        font-size: 40px;
     }
 
 	.firsttext a{
-        font-size: 35px;
+        font-size: 37px;
     }
 
     /* product page */
+    
 	.boxlast{
         width: 300px;
     }
@@ -1567,17 +1583,46 @@ a {
     }
 
 	.boxlast input{
-        width: 218px;
+        width: 214px;
     }
 
 	.prolast a{
         width: 300px;
     }
+
+    /* shipping */
+    .shipbase h5 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 1157px){
+    .cartq {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .pleft {
+        width: 300px;
+    }
+
+    .pright{
+        width: calc(100% - 300px);
+    }
+
+    .cartext p {
+        font-size: 20px;
+    }
+
+    .navbox {
+        width: 510px;
+    }
 }
 
 @media screen and (max-width: 1025px){
 	/* productlist page */
-    .procontainer{
+    /* .procontainer{
         display: block;
     }
 
@@ -1598,7 +1643,7 @@ a {
         width:auto;
         position:static;
         text-align: center;
-    }
+    } */
 }
 
 

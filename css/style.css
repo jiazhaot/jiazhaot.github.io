@@ -1652,9 +1652,9 @@ a {
 }
 
 
-@media screen and (max-width: 980px){
+@media screen and (max-width: 900px){
     /* index */
-    .headersearch{
+    /* .headersearch{
         width: 90%;
     }
 
@@ -1664,10 +1664,10 @@ a {
 
     .headerleft .navimg{
         margin-right: 20px;
-    }
+    } */
 
     /* product page */
-    .boxcontainer{
+    /* .boxcontainer{
         display: block;
     }
 
@@ -1681,5 +1681,5 @@ a {
         float: none;
         width: 100%;
         padding-top: 20px;
-    }
+    } */
 }

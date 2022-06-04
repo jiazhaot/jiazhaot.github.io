@@ -157,60 +157,6 @@ a {
     outline: none;
 }
 
-.searchbox {
-    width: 1020px;
-    position: absolute;
-    top: 92px;
-    left: 51%;
-    border-radius: 0 0 14px 14px;
-    transform: translateX(-50%);
-    background: #C2CBC6;
-    padding: 13px 50px 44px 90px;
-    box-sizing: border-box;
-    display: none;
-}
-
-.searchlist {
-    width: 100%;
-    border-top: 1px solid #050404;
-    padding-top: 30px;
-    box-sizing: border-box;
-}
-
-.searchlist a {
-    display: block;
-    width: 100%;
-}
-
-.sleft {
-    float: left;
-    width: 217px;
-    margin-right: 40px;
-}
-
-.sleft img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.sright {
-    float: left;
-    width: calc(100% - 257px);
-}
-
-.sright h5 {
-    font-size: 30px;
-    color: #264840;
-    font-weight: 400;
-}
-
-.sright p {
-    font-size: 23px;
-    color: #fff;
-    font-weight: 400;
-}
-
 .nav {
     position: fixed;
     width: 100%;
@@ -1523,32 +1469,6 @@ a {
         width: 600px;
     }
 
-    .searchbox{
-        width: 600px;
-    }
-
-    .searchbox{
-        width: 600px;
-        padding: 13px 20px 20px 20px;
-        left: 51.5%
-    }
-
-    /* shipping page */
-    .sleft{width: 120px;
-        margin-right: 20px;
-    }
-
-	.sright{
-        width: calc(100% - 140px);
-    }
-
-	.sright h5{
-        font-size: 24px;
-    }
-
-	.sright p{
-        font-size: 16px;
-    }
 
     /* productlist page */
     .pleft h4,.pleft h5{
@@ -1660,12 +1580,6 @@ a {
         width: 90%;
     }
 
-    .searchbox{
-        width: 100%;
-        padding: 10px;
-        left: 50%;
-    }
-
     .headerright a{
         margin-right: 20px;
     }
@@ -1674,8 +1588,5 @@ a {
         margin-right: 20px;
     }
 
-    .sright h5{
-        font-size: 20px;
-    }
     
 }

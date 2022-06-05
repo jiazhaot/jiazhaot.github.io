@@ -1913,5 +1913,125 @@ a {
         vertical-align: 11px;
     }
 
+    /* cart */
+    .cartlist{
+        height: fit-content;
+        max-width: 100%;
+    }
+
+    .cartfirst{
+        height: 100%;
+    }
+
+    .cartimg{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .cartext{
+        width: 100%;
+    }
+
+    .cartlastcon a{
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    .cartlastcon a:last-child{
+        margin-right: auto;
+    }
     
+    .cartup p{
+        font-size: 20px;
+    }
+
+    .cartmoney p{
+        font-size: 20px;
+    }
+
+    .cartq input {
+        font-size: 22px;
+    }
+
+    /* info */
+    .checkoutnav a{
+        font-size: 15px;
+        margin: 0 5px;
+    }
+
+    .checkoutnav p{
+        display: none;
+    }
+
+    .infolast a{
+        width: 140px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+    }
+
+    .infoleft {
+        padding-bottom: 18px;
+    }
+
+    .infotop h5{
+        font-size: 20px;
+    }
+    
+    .infomid h5{
+        font-size: 20px;
+    }
+
+    /* shipping */
+    .shipbase h5{
+        font-size: 20px;
+    }
+
+    /* payment */
+    .billinged p{
+        font-size: 20px;
+    }
+
+    /* final */
+    .finalcontext{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .finalcontext a{
+        font-size: 20px;
+        width: 260px;
+        margin-top: 40px;
+    }
+
+    .finaltext h6{
+        font-size: 23px;
+    }
+
+    .finaltext p{
+        font-size: 24px;
+    }
+
+    .final{
+        padding: 78px 4%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .cartq button {
+        display: none;
+    }
+
+    .cartq input{
+        height: 60px;
+    }
+
+    .cartlist {
+        padding: 12px 0px;
+    }
+
+    .proimg {
+        height: 54%;
+    }
 }

@@ -353,6 +353,10 @@ a {
     margin-right: 58px;
 }
 
+.boxlistlast{
+    display: none;
+}
+
 .boxlist p {
     display: block;
     width: 100%;
@@ -1604,6 +1608,7 @@ a {
 }
 
 @media screen and (max-width: 1100px){
+    /* info */
     .pleft {
         width: 300px;
     }
@@ -1612,6 +1617,7 @@ a {
         width: calc(100% - 300px);
     }
 
+    /* cart */
     .cartext p {
         font-size: 20px;
     }
@@ -1727,5 +1733,132 @@ a {
 }
 
 @media screen and (max-width: 600px){
+    /* index */
+    .headerbut{
+        height: 60px;
+    }
 
+    .headerleft{
+        margin-top: 21px;
+    }
+
+	.headerleft .navimg{
+        max-width: 22px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+
+	.headerleft a{
+        max-width: 20px;
+    }
+
+	.headerright{
+        margin-top: 21px;
+    }
+
+	.headerright a{
+        max-width: 28px;
+    }
+
+    .headercon h1{
+        font-size: 24px;
+        line-height: 60px;
+    }
+
+    .headersearch{
+        height: 40px;
+        margin-top: 10px;
+    }
+
+	.headersearch input{
+        padding: 0 42px;
+        font-size: 20px;
+        background: transparent url(../images/icon2.png) 10px center no-repeat;
+        background-size: 22px 22px;
+    }
+
+	.headersearch button{
+        background-size: 22px 22px;
+        right: 0;
+        width: 40px;
+    }
+
+    .smicons{
+        display: none;
+    }
+
+    .firsttext{
+        float: none;
+        width: 100%;
+    }
+
+	.firsttext a{
+        font-size: 25px;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    .navbox{
+       width: 300px;
+       left: -16px;
+    }
+
+	.navbox h1{
+        font-size: 24px;
+        padding-bottom: 32px;
+    }
+
+	.navbox ul li a{
+        font-size: 18px;
+        max-width: 135px;
+        padding-top: 26px;
+    }
+
+    /* product page */
+    .boxcontainer{
+        padding: 40px 4%;
+    }
+
+	.boxlistpc{
+        display: none;
+    }
+
+	.boxbig{
+        float: none;
+        width: 100%
+        ;margin-bottom: 16px;
+    }
+    
+    .boxlistlast{
+        display: block;
+        width: 100%;
+        float: none;
+    }
+
+    .boxlistlast p{
+        float: left;
+        width: 32%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+    }
+
+    .boxlistlast p:nth-child(3n){
+        margin-right: 0;
+    }
+
+    .boxright h5 {
+        font-size: 25px;
+    }
+
+    .boxtexted .texted{
+        font-size: 20px;
+    }
+
+    .boxtexted h6{
+        font-size: 20px;
+    }
+
+    .boxtexted .lastext{
+        font-size: 20px;
+    }
 }

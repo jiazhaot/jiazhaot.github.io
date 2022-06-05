@@ -1654,7 +1654,7 @@ a {
 
 @media screen and (max-width: 900px){
     /* index */
-    /* .headersearch{
+    .headersearch{
         width: 90%;
     }
 
@@ -1664,10 +1664,10 @@ a {
 
     .headerleft .navimg{
         margin-right: 20px;
-    } */
+    }
 
     /* product page */
-    /* .boxcontainer{
+    .boxcontainer{
         display: block;
     }
 
@@ -1681,5 +1681,50 @@ a {
         float: none;
         width: 100%;
         padding-top: 20px;
-    } */
+    }
+
+    .boxed {
+        height: 125%;
+    }
+
+    /* info */
+    .info{
+        height: auto;
+    }
+
+    .infoleft{
+        float: none;
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .infocontainer{
+        float: none;
+        width: 100%;
+    }
+
+    .inforight{
+        float: none;
+        width: 100%;
+    }
+
+    .checkoutnav a{
+        display: inline-block;
+        font-size: 20px;
+        margin: 0 12px;
+    }
+
+    .checkoutnav p{
+        display: inline-block;
+        transform: rotate(-90deg);
+        width: 20px;
+        height: 15px;
+        vertical-align: -59px;
+    }
+
+    /* final page*/
+    .final{
+        float: none;
+        width: 100%;
+    }
 }

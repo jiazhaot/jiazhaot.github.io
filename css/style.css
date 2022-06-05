@@ -694,7 +694,7 @@ a {
 }
 
 .cartmoney p {
-    font-size: 45px;
+    font-size: 38px;
     color: #3D7666;
     text-align: center;
 }
@@ -1952,6 +1952,10 @@ a {
 
     .cartq input {
         font-size: 22px;
+    }
+
+    .cartq button {
+        display: none;
     }
 
     /* info */

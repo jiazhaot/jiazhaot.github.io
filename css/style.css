@@ -1730,6 +1730,11 @@ a {
         float: none;
         width: 100%;
     }
+
+    /* cart */
+    .cartq button{
+        width: 0;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -1861,4 +1866,52 @@ a {
     .boxtexted .lastext{
         font-size: 20px;
     }
+
+    /* productlist */
+    .prlist ul li{
+        width: 49%;
+        margin-right: 2%;
+        margin-bottom: -32px;
+    }
+
+	.prlist ul li:nth-child(3n){
+        margin-right: 2%;
+    }
+
+	.prlist ul li:nth-child(2n){
+        margin-right: 0;
+    }
+
+    .protexted h5{
+        font-size: 16px;
+    }
+
+	.protexted p{
+        font-size: 16px;
+    }
+
+	.proimg{
+        margin-bottom: 10px;
+    }
+
+    .scrpage{
+        margin-top: 20px;
+    }
+
+	.scrpage ul li{
+        margin-right: 12px;
+    }
+
+	.scrpage ul li a{
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+	.scrpage .pages{
+        font-size: 14px;
+        margin-left: 20px;
+        vertical-align: 11px;
+    }
+
+    
 }

@@ -567,17 +567,17 @@ a {
     text-align: center;
 }
 
-.scrpage {
+.turnpage {
     width: 100%;
     text-align: center;
     margin-top: 60px;
 }
 
-.scrpage ul {
+.turnpage ul {
     display: inline-block;
 }
 
-.scrpage .pages {
+.turnpage .pages {
     font-size: 24px;
     color: #48907F;
     text-decoration: underline;
@@ -585,16 +585,16 @@ a {
     margin-left: 60px;
 }
 
-.scrpage ul li {
+.turnpage ul li {
     float: left;
     margin-right: 20px;
 }
 
-.scrpage ul li:last-child {
+.turnpage ul li:last-child {
     margin-right: 0;
 }
 
-.scrpage ul li a {
+.turnpage ul li a {
     font-size: 24px;
     color: #48907F;
     border: 3px solid #48907F;
@@ -605,7 +605,7 @@ a {
     background: transparent;
 }
 
-.scrpage ul li.active a {
+.turnpage ul li.active a {
     color: black;
 }
 
@@ -1894,20 +1894,20 @@ a {
         margin-bottom: 10px;
     }
 
-    .scrpage{
+    .turnpage{
         margin-top: 20px;
     }
 
-	.scrpage ul li{
+	.turnpage ul li{
         margin-right: 12px;
     }
 
-	.scrpage ul li a{
+	.turnpage ul li a{
         font-size: 14px;
         padding: 6px 10px;
     }
 
-	.scrpage .pages{
+	.turnpage .pages{
         font-size: 14px;
         margin-left: 20px;
         vertical-align: 11px;

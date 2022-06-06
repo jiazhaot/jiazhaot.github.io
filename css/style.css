@@ -1,4 +1,5 @@
-@charset "utf-8"; /* initialization */
+@charset "utf-8"; 
+/* initialization */
 html {
     font-size: 50px;
 }
@@ -163,16 +164,12 @@ a {
     height: 100%;
     z-index: 6000;
     top: 0;
-    /* left: -100%; */
 }
 
 .navbg {
     position: fixed;
-    /* width: 100%; */
-    /* height: 100%; */
     background: rgba(0,0,0,0);
     top: 0;
-    /* left: -100%; */
 }
 
 .navbox {
@@ -180,7 +177,6 @@ a {
     height: 100%;
     background: rgba(112,112,112,0.98);
     position: fixed;
-    /* left: -700%; */
     padding: 42px 37px;
     box-sizing: border-box;
 }

@@ -1405,7 +1405,11 @@ a {
     }
     
     .headerup{
-        height: 20px;
+        height: 22px;
+    }
+
+    .footer {
+        height: 22px;
     }
 
     .headerbut{

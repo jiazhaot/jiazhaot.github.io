@@ -54,7 +54,7 @@ a {
     background: rgba(1,75,54,0.76);
 }
 
-.headerbut {
+.headerbottom {
     width: 100%;
     height: 106px;
     background: #C2CBC6;
@@ -313,7 +313,7 @@ a {
     display: block;
 }
 
-.headerbuted {
+.headerbottomed {
     border-bottom: 1px solid rgba(5,4,4,0.47);
     width: 100%;
     box-sizing: border-box;
@@ -1408,7 +1408,7 @@ a {
         height: 22px;
     }
 
-    .headerbut{
+    .headerbottom{
         padding: 0 4%;
     }
 
@@ -1739,7 +1739,7 @@ a {
 
 @media screen and (max-width: 600px){
     /* index */
-    .headerbut{
+    .headerbottom{
         height: 60px;
     }
 

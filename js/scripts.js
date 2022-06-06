@@ -4,8 +4,6 @@ var els = document.querySelectorAll( '.headerright a' );
 var searchForm = document.querySelector( '.headersearch' );
 els.forEach( function( el ) {
   el.onclick = function() {
-    document.querySelector ('.active' ).classList.remove( 'active' );
-    el.classList.add( 'active' );
     if ( el.classList.contains( 'searchicon' ) ) {
       searchForm.children[0].focus(); 
       if ( searchForm.style.opacity == 0 ) { 

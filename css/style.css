@@ -129,7 +129,7 @@ a {
     border-radius: 9px;
     margin: 22px auto 0;
     position: relative;
-    display: none;
+    opacity: 0;
 }
 
 .headersearch input {

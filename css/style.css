@@ -9,7 +9,7 @@ html,body {
     height: 100%;
 }
 
-body,button,input,section {
+body,button,input {
     font-family: 'Roboto', sans-serif;
 }
 

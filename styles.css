@@ -63,21 +63,21 @@ body {
     radial-gradient(circle at 80% 0%, var(--blob-2), transparent 28%),
     var(--bg);
   color: var(--text);
+  padding-left: 340px;
 }
 
 .page {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 20px 48px;
 }
 
 .sidebar {
-  position: sticky;
-  top: 24px;
-  height: fit-content;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 320px;
   padding: 32px 24px 20px;
   background: var(--panel);
   border: 1px solid var(--border);
@@ -88,6 +88,7 @@ body {
   align-items: center;
   text-align: center;
   gap: 24px;
+  overflow-y: auto;
 }
 
 .sidebar-inner {
@@ -498,11 +499,17 @@ i[data-lucide] svg {
 }
 
 @media (max-width: 960px) {
+  body {
+    padding-left: 0;
+  }
   .page {
-    grid-template-columns: 1fr;
+    padding: 24px 16px 40px;
   }
   .sidebar {
     position: static;
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
   }
 }
 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1>Patrick Tian</h1>
+          <p>Frontend Engineer · Minimalist</p>
+        </div>
+      </div>
+      <p class="intro">
+        Code-driven designer crafting clean, fast experiences. Focused on Web
+        performance, DX, and thoughtful details.
+      </p>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#resume">Résumé</a>
+        <a href="#projects">Projects</a>
+        <a href="#photos">Photography</a>
+      </nav>
+      <div class="social">
+        <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <i data-lucide="github"></i>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+          <i data-lucide="linkedin"></i>
+          LinkedIn
+        </a>
+        <a href="mailto:hello@example.com">
+          <i data-lucide="mail"></i>
+          Email
+        </a>
+      </div>
+      <button id="theme-toggle" class="button ghost theme-toggle" type="button" aria-label="Toggle theme">
+        <i id="theme-icon" data-lucide="sun"></i>
+        <span id="theme-label">Light</span>
+      </button>
+      <button class="button ghost">Download PDF</button>
+    </aside>
+
+    <main class="content">
+      <section id="home" class="card hero">
+        <div class="terminal">
+          <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="path">~/portfolio</span>
+          </div>
+          <div class="terminal-body">
+            <div class="prompt">$ <span id="typed"></span><span class="cursor" aria-hidden="true"></span></div>
+            <div id="terminal-lines" class="lines"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resume" class="card">
+        <div class="section-head">
+          <h2>Résumé</h2>
+          <div class="pill">Open to opportunities</div>
+        </div>
+        <div class="grid two">
+          <div>
+            <h3>Education</h3>
+            <ul class="list">
+              <li>
+                <div class="row">
+                  <span>ABC University · CS</span>
+                  <span class="muted">2019 - 2023</span>
+                </div>
+                <p class="muted">Research in web performance & HCI.</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Skills</h3>
+            <div class="tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind</span>
+              <span class="tag">Framer Motion</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">GitHub API</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid two">
+          <div>
+            <h3>Experience</h3>
+            <ul class="list">
+              <li>
+                <div class="row">
+                  <span>Frontend Intern · XYZ</span>
+                  <span class="muted">2024</span>
+                </div>
+                <p class="muted">
+                  Built component library, improved CLS/LCP; automated GitHub actions.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Highlights</h3>
+            <ul class="list">
+              <li>99th percentile Lighthouse scores on multiple launches.</li>
+              <li>Published 3 OSS utilities used by 2k+ devs.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="card">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <div class="pill">GitHub synced</div>
+        </div>
+        <div id="project-grid" class="project-grid"></div>
+      </section>
+
+      <section id="photos" class="card">
+        <div class="section-head">
+          <h2>Photography</h2>
+          <div class="pill">Optional</div>
+        </div>
+        <div class="photo-grid">
+          <div class="photo skeleton"></div>
+          <div class="photo skeleton"></div>
+          <div class="photo skeleton"></div>
+          <div class="photo skeleton"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

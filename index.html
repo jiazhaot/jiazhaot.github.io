@@ -14,42 +14,45 @@
 <body>
   <div class="page">
     <aside class="sidebar">
-      <div class="profile">
-        <div class="avatar" aria-hidden="true"></div>
-        <div>
-          <h1>Patrick Tian</h1>
-          <p>Frontend Engineer · Minimalist</p>
+      <div class="sidebar-inner">
+        <div class="profile">
+          <div class="avatar" aria-hidden="true"></div>
+          <div class="profile-text">
+            <h1>Patrick Tian</h1>
+            <p class="profile-subtitle">Frontend Engineer · Minimalist</p>
+          </div>
+        </div>
+        <p class="intro">
+          Code-driven designer crafting clean, fast experiences. Focused on Web
+          performance, DX, and thoughtful details.
+        </p>
+        <nav class="nav">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#resume" class="nav-link">Résumé</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#photos" class="nav-link">Photography</a>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <div class="social">
+          <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+          <a href="mailto:hello@example.com" aria-label="Email">
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+        <div class="sidebar-footer-actions">
+          <button id="theme-toggle" class="button ghost theme-toggle" type="button" aria-label="Toggle theme">
+            <i id="theme-icon" data-lucide="sun"></i>
+            <span id="theme-label">Light</span>
+          </button>
+          <button class="button ghost">Download PDF</button>
         </div>
       </div>
-      <p class="intro">
-        Code-driven designer crafting clean, fast experiences. Focused on Web
-        performance, DX, and thoughtful details.
-      </p>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#resume">Résumé</a>
-        <a href="#projects">Projects</a>
-        <a href="#photos">Photography</a>
-      </nav>
-      <div class="social">
-        <a href="https://github.com/" target="_blank" rel="noreferrer">
-          <i data-lucide="github"></i>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-          <i data-lucide="linkedin"></i>
-          LinkedIn
-        </a>
-        <a href="mailto:hello@example.com">
-          <i data-lucide="mail"></i>
-          Email
-        </a>
-      </div>
-      <button id="theme-toggle" class="button ghost theme-toggle" type="button" aria-label="Toggle theme">
-        <i id="theme-icon" data-lucide="sun"></i>
-        <span id="theme-label">Light</span>
-      </button>
-      <button class="button ghost">Download PDF</button>
     </aside>
 
     <main class="content">

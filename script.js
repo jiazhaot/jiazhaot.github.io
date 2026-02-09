@@ -84,7 +84,15 @@ function runTerminal() {
       // Push the fully typed static line into the history area.
       if (linesEl) {
         const line = document.createElement("div");
-        line.textContent = PROMPT_PREFIX + current;
+        const prefixSpan = document.createElement("span");
+        prefixSpan.className = "terminal-prefix";
+        prefixSpan.textContent = PROMPT_PREFIX;
+
+        const textSpan = document.createElement("span");
+        textSpan.textContent = current;
+
+        line.appendChild(prefixSpan);
+        line.appendChild(textSpan);
         linesEl.appendChild(line);
         linesEl.scrollTop = linesEl.scrollHeight;
       }

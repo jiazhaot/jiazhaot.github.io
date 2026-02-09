@@ -25,7 +25,7 @@
     radial-gradient(circle at 80% 20%, rgba(34, 197, 235, 0.08), transparent 22%),
     #05060a;
   --terminal-prompt: #c4b5fd;
-  --terminal-cursor: #c4b5fd;
+  --terminal-cursor: #22c55e;
   --terminal-prefix: #22c55e;
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     sans-serif;
@@ -54,7 +54,7 @@
     radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.12), transparent 24%),
     #ffffff;
   --terminal-prompt: #6d28d9;
-  --terminal-cursor: #6d28d9;
+  --terminal-cursor: #16a34a;
   --terminal-prefix: #16a34a;
 }
 
@@ -413,10 +413,14 @@ i[data-lucide] svg {
 
 .cursor {
   display: inline-block;
-  width: 10px;
-  background: var(--terminal-cursor);
+  width: 1ch;
   margin-left: 2px;
+  color: var(--terminal-cursor);
   animation: blink 1s steps(1) infinite;
+}
+
+.cursor::before {
+  content: '|';
 }
 
 @keyframes blink {

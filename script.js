@@ -1,15 +1,16 @@
 const PROMPT_PREFIX = "MacBook-Pro:~ patrickteng$ ";
+const ROLE_STATIC_PREFIX = " I'm a...";
 
 const staticTerminalLines = [
   "Hi, I'm Patrick",
   "I'm coding, creating, and teaching."
 ];
 
-const roleLines = [
-  "I'm a...Programmer 💻",
-  "I'm a...UX Designer 🎨",
-  "I'm a...Early Childhood Teacher 🎓",
-  "I'm a...Frisbee Enthusiast 🥏"
+const roleLabels = [
+  "Programmer 💻",
+  "UX Designer 🎨",
+  "Early Childhood Teacher 🎓",
+  "Frisbee Enthusiast 🥏"
 ];
 
 const THEME_KEY = "theme"; // "light" | "dark"
@@ -18,12 +19,18 @@ const themeIcon = document.getElementById("theme-icon");
 const themeLabel = document.getElementById("theme-label");
 
 const promptPrefixEl = document.getElementById("prompt-prefix");
+const promptRolePrefixEl = document.getElementById("prompt-role-prefix");
 const typed = document.getElementById("typed");
 const cursor = document.querySelector(".cursor");
 const linesEl = document.getElementById("terminal-lines");
 
 if (promptPrefixEl) {
   promptPrefixEl.textContent = PROMPT_PREFIX;
+}
+
+if (promptRolePrefixEl) {
+  // During the static intro phase, we don't show "I'm a..."
+  promptRolePrefixEl.textContent = "";
 }
 
 let phase = "static"; // "static" | "roles"
@@ -81,31 +88,38 @@ function runTerminal() {
     charIndex++;
 
     if (charIndex === current.length) {
-      // Push the fully typed static line into the history area.
-      if (linesEl) {
-        const line = document.createElement("div");
-        const prefixSpan = document.createElement("span");
-        prefixSpan.className = "terminal-prefix";
-        prefixSpan.textContent = PROMPT_PREFIX;
-
-        const textSpan = document.createElement("span");
-        textSpan.textContent = current;
-
-        line.appendChild(prefixSpan);
-        line.appendChild(textSpan);
-        linesEl.appendChild(line);
-        linesEl.scrollTop = linesEl.scrollHeight;
-      }
-
       staticIndex += 1;
       charIndex = 0;
 
       const isLastStatic = staticIndex >= staticTerminalLines.length;
 
-      // Small pause, then either move to next static line or start roles loop.
+      // Small pause, then "commit" the line into history and either
+      // move to next static line or start roles loop.
       setTimeout(() => {
+        // Clear the prompt line first so the text never appears twice.
         typed.textContent = "";
+
+        // Now push the line into the history area.
+        if (linesEl) {
+          const line = document.createElement("div");
+          const prefixSpan = document.createElement("span");
+          prefixSpan.className = "terminal-prefix";
+          prefixSpan.textContent = PROMPT_PREFIX;
+
+          const textSpan = document.createElement("span");
+          textSpan.textContent = current;
+
+          line.appendChild(prefixSpan);
+          line.appendChild(textSpan);
+          linesEl.appendChild(line);
+          linesEl.scrollTop = linesEl.scrollHeight;
+        }
+
         if (isLastStatic) {
+          // After the two intro lines, show "I'm a..." before looping roles.
+          if (promptRolePrefixEl) {
+            promptRolePrefixEl.textContent = ROLE_STATIC_PREFIX;
+          }
           phase = "roles";
         }
         runTerminal();
@@ -113,20 +127,22 @@ function runTerminal() {
       return;
     }
 
-    const speed = 80 + Math.random() * 40;
+    // Slow typing for the two intro lines as well.
+    const speed = 140 + Math.random() * 60;
     setTimeout(runTerminal, speed);
     return;
   }
 
-  // Second phase: loop through role lines, only updating the suffix part.
-  const current = roleLines[roleIndex];
+  // Second phase: loop through role labels, only updating the label part.
+  const current = roleLabels[roleIndex];
 
   if (!deleting) {
     typed.textContent = current.slice(0, charIndex + 1);
     charIndex++;
     if (charIndex === current.length) {
       deleting = true;
-      setTimeout(runTerminal, 1200);
+      // Longer pause to let each label stay visible.
+      setTimeout(runTerminal, 2000);
       return;
     }
   } else {
@@ -136,11 +152,12 @@ function runTerminal() {
 
     if (charIndex === 0) {
       deleting = false;
-      roleIndex = (roleIndex + 1) % roleLines.length;
+      roleIndex = (roleIndex + 1) % roleLabels.length;
     }
   }
 
-  const speed = deleting ? 40 : 80;
+  // Slow down typing & deleting for clearer effect.
+  const speed = deleting ? 90 : 140;
   setTimeout(runTerminal, speed + Math.random() * 40);
 }
 

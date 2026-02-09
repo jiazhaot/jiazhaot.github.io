@@ -1,5 +1,5 @@
 const PROMPT_PREFIX = "MacBook-Pro:~ patrickteng$ ";
-const ROLE_STATIC_PREFIX = " I'm a...";
+const ROLE_STATIC_PREFIX = "I'm a...";
 
 const staticTerminalLines = [
   "Hi, I'm Patrick",
@@ -24,9 +24,10 @@ const typed = document.getElementById("typed");
 const cursor = document.querySelector(".cursor");
 const linesEl = document.getElementById("terminal-lines");
 
-if (promptPrefixEl) {
-  promptPrefixEl.textContent = PROMPT_PREFIX;
-}
+// During the static intro phase, 隐藏第三行的前缀，且不显示光标；
+// 只有开始轮播身份标签时才一起出现，避免前两行打字阶段出现“多余光标”的视觉 bug。
+if (promptPrefixEl) promptPrefixEl.textContent = "";
+if (cursor) cursor.style.visibility = "hidden";
 
 if (promptRolePrefixEl) {
   // During the static intro phase, we don't show "I'm a..."
@@ -38,6 +39,7 @@ let staticIndex = 0;
 let roleIndex = 0;
 let charIndex = 0;
 let deleting = false;
+const staticLineEls = []; // cache for the two static line elements
 
 function getPreferredTheme() {
   const saved = localStorage.getItem(THEME_KEY);
@@ -79,12 +81,29 @@ function initTheme() {
 }
 
 function runTerminal() {
-  if (!typed) return;
+  if (!typed || !linesEl) return;
 
   // First phase: type and "commit" two static lines that stay in history.
   if (phase === "static") {
     const current = staticTerminalLines[staticIndex];
-    typed.textContent = current.slice(0, charIndex + 1);
+
+    // Ensure a fixed DOM element exists for this static line
+    if (!staticLineEls[staticIndex]) {
+      const line = document.createElement("div");
+      const prefixSpan = document.createElement("span");
+      prefixSpan.className = "terminal-prefix";
+      prefixSpan.textContent = PROMPT_PREFIX;
+
+      const textSpan = document.createElement("span");
+
+      line.appendChild(prefixSpan);
+      line.appendChild(textSpan);
+      linesEl.appendChild(line);
+      staticLineEls[staticIndex] = { line, textSpan };
+    }
+
+    const { textSpan } = staticLineEls[staticIndex];
+    textSpan.textContent = current.slice(0, charIndex + 1);
     charIndex++;
 
     if (charIndex === current.length) {
@@ -93,33 +112,15 @@ function runTerminal() {
 
       const isLastStatic = staticIndex >= staticTerminalLines.length;
 
-      // Small pause, then "commit" the line into history and either
-      // move to next static line or start roles loop.
+      // Small pause, then either move to next static line or start roles loop.
       setTimeout(() => {
-        // Clear the prompt line first so the text never appears twice.
-        typed.textContent = "";
-
-        // Now push the line into the history area.
-        if (linesEl) {
-          const line = document.createElement("div");
-          const prefixSpan = document.createElement("span");
-          prefixSpan.className = "terminal-prefix";
-          prefixSpan.textContent = PROMPT_PREFIX;
-
-          const textSpan = document.createElement("span");
-          textSpan.textContent = current;
-
-          line.appendChild(prefixSpan);
-          line.appendChild(textSpan);
-          linesEl.appendChild(line);
-          linesEl.scrollTop = linesEl.scrollHeight;
-        }
-
         if (isLastStatic) {
           // After the two intro lines, show "I'm a..." before looping roles.
           if (promptRolePrefixEl) {
             promptRolePrefixEl.textContent = ROLE_STATIC_PREFIX;
           }
+          if (promptPrefixEl) promptPrefixEl.textContent = PROMPT_PREFIX;
+          if (cursor) cursor.style.visibility = "visible";
           phase = "roles";
         }
         runTerminal();

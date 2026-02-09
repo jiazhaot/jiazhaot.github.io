@@ -1,9 +1,15 @@
-const terminalLines = [
-  "npm run dev -- --turbo",
-  "next build && next start",
-  "fetching github stats...",
-  "deploying to vercel...",
-  "done in 1.23s"
+const PROMPT_PREFIX = "MacBook-Pro:~ patrickteng$ ";
+
+const staticTerminalLines = [
+  "Hi, I'm Patrick",
+  "I'm coding, creating, and teaching."
+];
+
+const roleLines = [
+  "I'm a...Programmer 💻",
+  "I'm a...UX Designer 🎨",
+  "I'm a...Early Childhood Teacher 🎓",
+  "I'm a...Frisbee Enthusiast 🥏"
 ];
 
 const THEME_KEY = "theme"; // "light" | "dark"
@@ -11,11 +17,18 @@ const themeToggleBtn = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
 const themeLabel = document.getElementById("theme-label");
 
+const promptPrefixEl = document.getElementById("prompt-prefix");
 const typed = document.getElementById("typed");
 const cursor = document.querySelector(".cursor");
 const linesEl = document.getElementById("terminal-lines");
 
-let lineIndex = 0;
+if (promptPrefixEl) {
+  promptPrefixEl.textContent = PROMPT_PREFIX;
+}
+
+let phase = "static"; // "static" | "roles"
+let staticIndex = 0;
+let roleIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
@@ -58,32 +71,69 @@ function initTheme() {
   }
 }
 
-function typeLoop() {
-  const current = terminalLines[lineIndex];
+function runTerminal() {
+  if (!typed) return;
+
+  // First phase: type and "commit" two static lines that stay in history.
+  if (phase === "static") {
+    const current = staticTerminalLines[staticIndex];
+    typed.textContent = current.slice(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === current.length) {
+      // Push the fully typed static line into the history area.
+      if (linesEl) {
+        const line = document.createElement("div");
+        line.textContent = PROMPT_PREFIX + current;
+        linesEl.appendChild(line);
+        linesEl.scrollTop = linesEl.scrollHeight;
+      }
+
+      staticIndex += 1;
+      charIndex = 0;
+
+      const isLastStatic = staticIndex >= staticTerminalLines.length;
+
+      // Small pause, then either move to next static line or start roles loop.
+      setTimeout(() => {
+        typed.textContent = "";
+        if (isLastStatic) {
+          phase = "roles";
+        }
+        runTerminal();
+      }, 600);
+      return;
+    }
+
+    const speed = 80 + Math.random() * 40;
+    setTimeout(runTerminal, speed);
+    return;
+  }
+
+  // Second phase: loop through role lines, only updating the suffix part.
+  const current = roleLines[roleIndex];
+
   if (!deleting) {
     typed.textContent = current.slice(0, charIndex + 1);
     charIndex++;
     if (charIndex === current.length) {
       deleting = true;
-      setTimeout(typeLoop, 1200);
-      if (linesEl) {
-        const line = document.createElement("div");
-        line.textContent = `$ ${current}`;
-        linesEl.appendChild(line);
-        linesEl.scrollTop = linesEl.scrollHeight;
-      }
+      setTimeout(runTerminal, 1200);
       return;
     }
   } else {
-    typed.textContent = current.slice(0, charIndex - 1);
-    charIndex--;
+    const nextLength = Math.max(charIndex - 1, 0);
+    typed.textContent = current.slice(0, nextLength);
+    charIndex = nextLength;
+
     if (charIndex === 0) {
       deleting = false;
-      lineIndex = (lineIndex + 1) % terminalLines.length;
+      roleIndex = (roleIndex + 1) % roleLines.length;
     }
   }
-  const speed = deleting ? 35 : 80;
-  setTimeout(typeLoop, speed + Math.random() * 40);
+
+  const speed = deleting ? 40 : 80;
+  setTimeout(runTerminal, speed + Math.random() * 40);
 }
 
 const projects = [
@@ -147,7 +197,7 @@ function renderProjects() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
-  typeLoop();
+  runTerminal();
   renderProjects();
   if (window.lucide) window.lucide.createIcons();
 });

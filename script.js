@@ -205,7 +205,10 @@ function startTerminalClock() {
   setInterval(update, 1000);
 }
 
-const projects = [
+const GITHUB_USER = "jiazhaot";
+const GITHUB_REPO_COUNT = 6;
+
+const fallbackProjects = [
   {
     name: "Terminalfolio",
     description: "Minimal terminal-inspired portfolio template with dark mode.",
@@ -235,10 +238,37 @@ const projects = [
   }
 ];
 
-function renderProjects() {
+async function fetchGitHubRepos() {
+  const url = `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=${GITHUB_REPO_COUNT}`;
+  const res = await fetch(url, { headers: { "Accept": "application/vnd.github+json" } });
+  if (!res.ok) throw new Error("github_fetch_failed");
+  const data = await res.json();
+  return data
+    .filter((repo) => !repo.fork)
+    .slice(0, GITHUB_REPO_COUNT)
+    .map((repo) => ({
+      name: repo.name,
+      description: repo.description || "No description provided.",
+      tech: repo.topics?.length ? repo.topics.slice(0, 4) : [],
+      stars: repo.stargazers_count ?? 0,
+      language: repo.language || "Other",
+      repo: repo.html_url,
+      demo: repo.homepage || repo.html_url
+    }));
+}
+
+async function renderProjects() {
   const grid = document.getElementById("project-grid");
   if (!grid) return;
   grid.innerHTML = "";
+
+  let projects = fallbackProjects;
+  try {
+    const fromGitHub = await fetchGitHubRepos();
+    if (fromGitHub.length) projects = fromGitHub;
+  } catch (error) {
+    projects = fallbackProjects;
+  }
 
   projects.forEach((p) => {
     const el = document.createElement("article");
@@ -249,9 +279,7 @@ function renderProjects() {
         <span class="tag">${p.language}</span>
       </div>
       <p class="muted">${p.description}</p>
-      <div class="tags">
-        ${p.tech.map((t) => `<span class="tag">${t}</span>`).join("")}
-      </div>
+      ${p.tech.length ? `<div class="tags">${p.tech.map((t) => `<span class="tag">${t}</span>`).join("")}</div>` : ""}
       <div class="project-meta">
         <span>★ ${p.stars}</span>
       </div>

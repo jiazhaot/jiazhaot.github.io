@@ -445,9 +445,9 @@ i[data-lucide] svg {
 .github-graph {
   margin-top: 15px;
   padding: 12px;
-  background: var(--soft);
+  /* background: var(--soft);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 14px; */
   overflow-x: auto;
   margin-bottom: 15px;
 }

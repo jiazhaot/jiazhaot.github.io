@@ -416,15 +416,10 @@ i[data-lucide] svg {
   font-weight: 500;
 }
 
-.cursor {
-  display: inline;
-  margin-left: 0;
+.with-cursor::after {
+  content: '|';
   color: var(--terminal-cursor);
   animation: blink 1.5s steps(1) infinite;
-}
-
-.cursor::before {
-  content: '|';
 }
 
 @keyframes blink {

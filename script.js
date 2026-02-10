@@ -7,10 +7,10 @@ const staticTerminalLines = [
 ];
 
 const roleLabels = [
-  "Programmer 💻",
-  "UX Designer 🎨",
-  "Early Childhood Teacher 🎓",
-  "Frisbee Enthusiast 🥏"
+  " Programmer 💻",
+  " UX Designer 🎨",
+  " Early Childhood Teacher 🎓",
+  " Frisbee Enthusiast 🥏"
 ];
 
 const THEME_KEY = "theme"; // "light" | "dark"
@@ -21,7 +21,6 @@ const themeLabel = document.getElementById("theme-label");
 const promptPrefixEl = document.getElementById("prompt-prefix");
 const promptRolePrefixEl = document.getElementById("prompt-role-prefix");
 const typed = document.getElementById("typed");
-const cursor = document.querySelector(".cursor");
 const promptEl = document.querySelector(".prompt");
 const linesEl = document.getElementById("terminal-lines");
 const terminalTimeEl = document.getElementById("terminal-time");
@@ -29,7 +28,6 @@ const terminalTimeEl = document.getElementById("terminal-time");
 // During the static intro phase, 隐藏第三行的前缀，且不显示光标；
 // 只有开始轮播身份标签时才一起出现，避免前两行打字阶段出现“多余光标”的视觉 bug。
 if (promptPrefixEl) promptPrefixEl.textContent = "";
-if (cursor) cursor.style.visibility = "hidden";
 if (promptEl) promptEl.style.display = "none";
 
 if (promptRolePrefixEl) {
@@ -99,6 +97,7 @@ function runTerminal() {
       prefixSpan.textContent = PROMPT_PREFIX;
 
       const textSpan = document.createElement("span");
+      textSpan.className = "with-cursor";
 
       line.appendChild(prefixSpan);
       line.appendChild(textSpan);
@@ -112,12 +111,17 @@ function runTerminal() {
       return;
     }
 
+    staticLineEls.forEach((item, index) => {
+      if (!item) return;
+      if (index === staticIndex) {
+        item.textSpan.classList.add("with-cursor");
+      } else {
+        item.textSpan.classList.remove("with-cursor");
+      }
+    });
+
     const { textSpan } = staticLineEls[staticIndex];
     textSpan.textContent = current.slice(0, charIndex + 1);
-    if (cursor && staticLineEls[staticIndex].line) {
-      cursor.style.visibility = "visible";
-      staticLineEls[staticIndex].line.appendChild(cursor);
-    }
     charIndex++;
 
     if (charIndex === current.length) {
@@ -136,10 +140,9 @@ function runTerminal() {
           }
           if (promptPrefixEl) promptPrefixEl.textContent = PROMPT_PREFIX;
           if (promptEl) promptEl.style.display = "block";
-          if (cursor && promptEl) {
-            cursor.style.visibility = "visible";
-            promptEl.appendChild(cursor);
-          }
+          staticLineEls.forEach((item) => {
+            if (item?.textSpan) item.textSpan.classList.remove("with-cursor");
+          });
           phase = "roles";
         }
         runTerminal();
@@ -162,6 +165,7 @@ function runTerminal() {
       setTimeout(runTerminal, 320);
       return;
     }
+    if (typed) typed.classList.add("with-cursor");
     typed.textContent = current.slice(0, charIndex + 1);
     charIndex++;
     if (charIndex === current.length) {

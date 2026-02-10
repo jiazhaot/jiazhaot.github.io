@@ -442,6 +442,23 @@ i[data-lucide] svg {
   gap: 12px;
 }
 
+.github-graph {
+  margin-top: 15px;
+  padding: 12px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+.github-graph img {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+  height: auto;
+}
+
 .project-card {
   padding: 14px;
   border: 1px solid var(--border);

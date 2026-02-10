@@ -206,7 +206,7 @@ function startTerminalClock() {
 }
 
 const GITHUB_USER = "jiazhaot";
-const GITHUB_REPO_COUNT = 6;
+const GITHUB_PER_PAGE = 100;
 
 const fallbackProjects = [
   {
@@ -239,13 +239,23 @@ const fallbackProjects = [
 ];
 
 async function fetchGitHubRepos() {
-  const url = `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=${GITHUB_REPO_COUNT}`;
-  const res = await fetch(url, { headers: { "Accept": "application/vnd.github+json" } });
-  if (!res.ok) throw new Error("github_fetch_failed");
-  const data = await res.json();
-  return data
+  const headers = { "Accept": "application/vnd.github+json" };
+  let page = 1;
+  let all = [];
+
+  while (true) {
+    const url = `https://api.github.com/users/${GITHUB_USER}/repos?per_page=${GITHUB_PER_PAGE}&page=${page}`;
+    const res = await fetch(url, { headers });
+    if (!res.ok) throw new Error("github_fetch_failed");
+    const data = await res.json();
+    all = all.concat(data);
+    if (data.length < GITHUB_PER_PAGE) break;
+    page += 1;
+  }
+
+  return all
     .filter((repo) => !repo.fork)
-    .slice(0, GITHUB_REPO_COUNT)
+    .sort((a, b) => (b.stargazers_count ?? 0) - (a.stargazers_count ?? 0))
     .map((repo) => ({
       name: repo.name,
       description: repo.description || "No description provided.",

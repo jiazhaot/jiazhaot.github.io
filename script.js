@@ -22,12 +22,15 @@ const promptPrefixEl = document.getElementById("prompt-prefix");
 const promptRolePrefixEl = document.getElementById("prompt-role-prefix");
 const typed = document.getElementById("typed");
 const cursor = document.querySelector(".cursor");
+const promptEl = document.querySelector(".prompt");
 const linesEl = document.getElementById("terminal-lines");
+const terminalTimeEl = document.getElementById("terminal-time");
 
 // During the static intro phase, 隐藏第三行的前缀，且不显示光标；
 // 只有开始轮播身份标签时才一起出现，避免前两行打字阶段出现“多余光标”的视觉 bug。
 if (promptPrefixEl) promptPrefixEl.textContent = "";
 if (cursor) cursor.style.visibility = "hidden";
+if (promptEl) promptEl.style.display = "none";
 
 if (promptRolePrefixEl) {
   // During the static intro phase, we don't show "I'm a..."
@@ -39,6 +42,7 @@ let staticIndex = 0;
 let roleIndex = 0;
 let charIndex = 0;
 let deleting = false;
+let prefixPauseDone = false;
 const staticLineEls = []; // cache for the two static line elements
 
 function getPreferredTheme() {
@@ -102,13 +106,24 @@ function runTerminal() {
       staticLineEls[staticIndex] = { line, textSpan };
     }
 
+    if (charIndex === 0 && !prefixPauseDone) {
+      prefixPauseDone = true;
+      setTimeout(runTerminal, 320);
+      return;
+    }
+
     const { textSpan } = staticLineEls[staticIndex];
     textSpan.textContent = current.slice(0, charIndex + 1);
+    if (cursor && staticLineEls[staticIndex].line) {
+      cursor.style.visibility = "visible";
+      staticLineEls[staticIndex].line.appendChild(cursor);
+    }
     charIndex++;
 
     if (charIndex === current.length) {
       staticIndex += 1;
       charIndex = 0;
+      prefixPauseDone = false;
 
       const isLastStatic = staticIndex >= staticTerminalLines.length;
 
@@ -120,7 +135,11 @@ function runTerminal() {
             promptRolePrefixEl.textContent = ROLE_STATIC_PREFIX;
           }
           if (promptPrefixEl) promptPrefixEl.textContent = PROMPT_PREFIX;
-          if (cursor) cursor.style.visibility = "visible";
+          if (promptEl) promptEl.style.display = "block";
+          if (cursor && promptEl) {
+            cursor.style.visibility = "visible";
+            promptEl.appendChild(cursor);
+          }
           phase = "roles";
         }
         runTerminal();
@@ -138,6 +157,11 @@ function runTerminal() {
   const current = roleLabels[roleIndex];
 
   if (!deleting) {
+    if (charIndex === 0 && !prefixPauseDone) {
+      prefixPauseDone = true;
+      setTimeout(runTerminal, 320);
+      return;
+    }
     typed.textContent = current.slice(0, charIndex + 1);
     charIndex++;
     if (charIndex === current.length) {
@@ -153,6 +177,7 @@ function runTerminal() {
 
     if (charIndex === 0) {
       deleting = false;
+      prefixPauseDone = false;
       roleIndex = (roleIndex + 1) % roleLabels.length;
     }
   }
@@ -160,6 +185,20 @@ function runTerminal() {
   // Slow down typing & deleting for clearer effect.
   const speed = deleting ? 90 : 140;
   setTimeout(runTerminal, speed + Math.random() * 40);
+}
+
+function formatTerminalTime(date) {
+  const pad = (value) => String(value).padStart(2, "0");
+  return `[${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}]`;
+}
+
+function startTerminalClock() {
+  if (!terminalTimeEl) return;
+  const update = () => {
+    terminalTimeEl.textContent = formatTerminalTime(new Date());
+  };
+  update();
+  setInterval(update, 1000);
 }
 
 const projects = [
@@ -223,6 +262,7 @@ function renderProjects() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
+  startTerminalClock();
   runTerminal();
   renderProjects();
   if (window.lucide) window.lucide.createIcons();

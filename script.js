@@ -85,11 +85,10 @@ function initTheme() {
 function runTerminal() {
   if (!typed || !linesEl) return;
 
-  // First phase: type and "commit" two static lines that stay in history.
+  // --- 阶段 1: 打印静态开场行 ---
   if (phase === "static") {
     const current = staticTerminalLines[staticIndex];
 
-    // Ensure a fixed DOM element exists for this static line
     if (!staticLineEls[staticIndex]) {
       const line = document.createElement("div");
       const prefixSpan = document.createElement("span");
@@ -97,7 +96,8 @@ function runTerminal() {
       prefixSpan.textContent = PROMPT_PREFIX;
 
       const textSpan = document.createElement("span");
-      textSpan.className = "with-cursor";
+      // 初始时不加 with-cursor，由下面的逻辑统一控制
+      textSpan.className = ""; 
 
       line.appendChild(prefixSpan);
       line.appendChild(textSpan);
@@ -105,59 +105,89 @@ function runTerminal() {
       staticLineEls[staticIndex] = { line, textSpan };
     }
 
+    // 确保只有当前正在打字的行有光标
+    staticLineEls.forEach((item, index) => {
+      if (item && item.textSpan) {
+        if (index === staticIndex) {
+          item.textSpan.classList.add("with-cursor");
+        } else {
+          item.textSpan.classList.remove("with-cursor");
+        }
+      }
+    });
+
     if (charIndex === 0 && !prefixPauseDone) {
       prefixPauseDone = true;
       setTimeout(runTerminal, 320);
       return;
     }
 
-    staticLineEls.forEach((item, index) => {
-      if (!item) return;
-      if (index === staticIndex) {
-        item.textSpan.classList.add("with-cursor");
-      } else {
-        item.textSpan.classList.remove("with-cursor");
-      }
-    });
-
     const { textSpan } = staticLineEls[staticIndex];
     textSpan.textContent = current.slice(0, charIndex + 1);
     charIndex++;
 
     if (charIndex === current.length) {
+      // 这一行打完了，立刻移除当前行的光标，防止两行光标并存
+      textSpan.classList.remove("with-cursor");
+      
       staticIndex += 1;
       charIndex = 0;
       prefixPauseDone = false;
 
       const isLastStatic = staticIndex >= staticTerminalLines.length;
 
-      // Small pause, then either move to next static line or start roles loop.
       setTimeout(() => {
         if (isLastStatic) {
-          // After the two intro lines, show "I'm a..." before looping roles.
-          if (promptRolePrefixEl) {
-            promptRolePrefixEl.textContent = ROLE_STATIC_PREFIX;
-          }
-          if (promptPrefixEl) promptPrefixEl.textContent = PROMPT_PREFIX;
+          phase = "rolePrefix";
           if (promptEl) promptEl.style.display = "block";
-          staticLineEls.forEach((item) => {
-            if (item?.textSpan) item.textSpan.classList.remove("with-cursor");
-          });
-          phase = "roles";
+          if (promptRolePrefixEl) promptRolePrefixEl.textContent = "";
         }
         runTerminal();
       }, 600);
       return;
     }
 
-    // Slow typing for the two intro lines as well.
     const speed = 140 + Math.random() * 60;
     setTimeout(runTerminal, speed);
     return;
   }
 
-  // Second phase: loop through role labels, only updating the label part.
-  const current = roleLabels[roleIndex];
+  // --- 阶段 2: 打印 "I'm a..." 前缀 (带打字机效果) ---
+  if (phase === "rolePrefix") {
+    const current = ROLE_STATIC_PREFIX;
+
+    if (charIndex === 0 && !prefixPauseDone) {
+      prefixPauseDone = true;
+      if (promptPrefixEl) promptPrefixEl.textContent = PROMPT_PREFIX;
+      setTimeout(runTerminal, 200);
+      return;
+    }
+
+    if (promptRolePrefixEl) {
+      promptRolePrefixEl.classList.add("with-cursor");
+      promptRolePrefixEl.textContent = current.slice(0, charIndex + 1);
+    }
+
+    charIndex++;
+
+    if (charIndex === current.length) {
+      setTimeout(() => {
+        // 前缀打完，光标交给下一个元素
+        if (promptRolePrefixEl) promptRolePrefixEl.classList.remove("with-cursor");
+        phase = "roles";
+        charIndex = 0;
+        prefixPauseDone = false;
+        runTerminal();
+      }, 400);
+      return;
+    }
+
+    setTimeout(runTerminal, 80 + Math.random() * 40);
+    return;
+  }
+
+  // --- 阶段 3: 循环角色标签 ---
+  const currentRole = roleLabels[roleIndex];
 
   if (!deleting) {
     if (charIndex === 0 && !prefixPauseDone) {
@@ -165,18 +195,19 @@ function runTerminal() {
       setTimeout(runTerminal, 320);
       return;
     }
+    // 激活最终循环处的光标
     if (typed) typed.classList.add("with-cursor");
-    typed.textContent = current.slice(0, charIndex + 1);
+    typed.textContent = currentRole.slice(0, charIndex + 1);
     charIndex++;
-    if (charIndex === current.length) {
+
+    if (charIndex === currentRole.length) {
       deleting = true;
-      // Longer pause to let each label stay visible.
       setTimeout(runTerminal, 2000);
       return;
     }
   } else {
     const nextLength = Math.max(charIndex - 1, 0);
-    typed.textContent = current.slice(0, nextLength);
+    typed.textContent = currentRole.slice(0, nextLength);
     charIndex = nextLength;
 
     if (charIndex === 0) {
@@ -186,8 +217,7 @@ function runTerminal() {
     }
   }
 
-  // Slow down typing & deleting for clearer effect.
-  const speed = deleting ? 90 : 140;
+  const speed = deleting ? 60 : 120;
   setTimeout(runTerminal, speed + Math.random() * 40);
 }
 
